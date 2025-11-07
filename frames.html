@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Frames Example</title>
+</head>
+<!-- Divide page vertically into 3 frames -->
+<frameset rows="200px,150px,*" border="1">
+  
+  <!-- First Frame: Image -->
+  <frame src="image.html" name="frame1">
+  
+  <!-- Second Frame: Paragraph -->
+  <frame src="paragraph.html" name="frame2">
+  
+  <!-- Third Frame: Hyperlink -->
+  <frame src="link.html" name="frame3">
+  
+  <!-- For browsers not supporting frames -->
+  <noframes>
+    <body>
+      <h2>Your browser does not support frames.</h2>
+      <p>Please update your browser.</p>
+    </body>
+  </noframes>
+</frameset>
+</html>
