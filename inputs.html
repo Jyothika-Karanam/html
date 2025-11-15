@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Different Ways to Take Input</title>
+</head>
+<body>
+
+<h2>Input Methods in JavaScript</h2>
+
+<script>
+// 1️⃣ Using prompt() — takes input from a popup box
+let name = prompt("Enter your name:");
+let age = prompt("Enter your age:");
+let city = prompt("Enter your city:");
+
+// 2️⃣ Using HTML input fields (example shown below in the page)
+// We’ll show how to read those using JavaScript later
+
+// 3️⃣ Using command line arguments is possible only in Node.js, not in browser
+
+// Display the output on the web page
+document.write("<h3>User Details:</h3>");
+document.write("Name: " + name + "<br>");
+document.write("Age: " + age + "<br>");
+document.write("City: " + city + "<br>");
+</script>
+
+<hr>
+
+<!-- 2️⃣ Example: Taking input using HTML input boxes -->
+<h3>Take Input Using HTML Form:</h3>
+Name: <input type="text" id="uname"><br><br>
+Age: <input type="number" id="uage"><br><br>
+<button onclick="showDetails()">Submit</button>
+
+<p id="output"></p>
+
+<script>
+function showDetails() {
+    let uname = document.getElementById("uname").value;
+    let uage = document.getElementById("uage").value;
+    document.getElementById("output").innerHTML = 
+        "Hello " + uname + "! You are " + uage + " years old.";
+}
+</script>
+
+</body>
+</html>
