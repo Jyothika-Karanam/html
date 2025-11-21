@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>Loop Example</title> 
+</head> 
+<body> 
+<h3>Enter Your Details</h3> 
+  name:<input type="text" id="name"><br><br>
+  age:<input type="text" id="age"><br><br>
+  city:<input type="text" id="city"><br><br>
+  <buttton onclick="showData()">show data</buttton>
+  <pre id="output"></pre>
+  <script>
+    let person={
+    name:document.getElementById("name").value;
+    age:documenty.getElementById("age").value;
+    city:document.getElementById("city").value;
+    };
+    let result=""
+    result+="using for in loop+/n"
+    for(let key in person){
+        result+=key+":"person[key]+"/n";
+    }
+
+document.getElementById("output").innerText=result;
+  </script>
+</body>
+</html>
