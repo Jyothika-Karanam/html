@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Functions</title>
+</head>
+<body>
+
+  <h3>Enter a number:</h3>
+  <input type="number" id="num"><br><br>
+  <button onclick="showResults()">Show</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    function showResults() {
+      let n = parseInt(document.getElementById("num").value);
+      let result = "Results for number " + n + ":\n\n";
+
+      // Factorial
+      let f = 1;
+      for (let i = 2; i <= n; i++) {
+        f *= i;
+      }
+      result += "Factorial: " + f + "\n";
+
+      // Fibonacci (first n terms)
+      let a = 0, b = 1, fibSeries = "0";
+      for (let i = 1; i < n; i++) {
+        fibSeries += ", " + b;
+        let next = a + b;
+        a = b;
+        b = next;
+      }
+      result += "Fibonacci (first " + n + " terms): " + fibSeries + "\n";
+
+      // Prime numbers up to n
+      let primes = [];
+      for (let i = 2; i <= n; i++) {
+        let isPrime = true;
+        for (let j = 2; j <= Math.sqrt(i); j++) {
+          if (i % j === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime) {
+          primes.push(i);
+        }
+      }
+      result += "Primes up to " + n + ": " + primes.join(", ") + "\n";
+
+      // Palindrome check (math logic)
+      let original = n;
+      let reversed = 0;
+      while (n > 0) {
+        let digit = n % 10;
+        reversed = reversed * 10 + digit;
+        n = Math.floor(n / 10);
+      }
+      result += "Palindrome: " + (original === reversed ? "Yes" : "No");
+
+      // Show result
+      document.getElementById("output").innerText = result;
+    }
+  </script>
+
+</body>
+</html>
